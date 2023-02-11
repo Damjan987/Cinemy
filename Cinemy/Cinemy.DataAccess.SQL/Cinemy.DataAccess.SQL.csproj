@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DDB61E94-1F1A-4847-8D33-4E9959BB7D68}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cinemy.DataAccess.SQL</RootNamespace>
+    <AssemblyName>Cinemy.DataAccess.SQL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataContext.cs" />
+    <Compile Include="Migrations\202103091004590_Initial.cs" />
+    <Compile Include="Migrations\202103091004590_Initial.Designer.cs">
+      <DependentUpon>202103091004590_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103091415323_DeletedMovieActorViewModel.cs" />
+    <Compile Include="Migrations\202103091415323_DeletedMovieActorViewModel.Designer.cs">
+      <DependentUpon>202103091415323_DeletedMovieActorViewModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103091447341_AddedGenreModel.cs" />
+    <Compile Include="Migrations\202103091447341_AddedGenreModel.Designer.cs">
+      <DependentUpon>202103091447341_AddedGenreModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103091628329_RemovedActorsFieldInMovieModel.cs" />
+    <Compile Include="Migrations\202103091628329_RemovedActorsFieldInMovieModel.Designer.cs">
+      <DependentUpon>202103091628329_RemovedActorsFieldInMovieModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103091648322_UpdatedMovieGenreIdToBeAStringInsteadOfGenre.cs" />
+    <Compile Include="Migrations\202103091648322_UpdatedMovieGenreIdToBeAStringInsteadOfGenre.Designer.cs">
+      <DependentUpon>202103091648322_UpdatedMovieGenreIdToBeAStringInsteadOfGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103111526147_AddedCartAndCartItemModels.cs" />
+    <Compile Include="Migrations\202103111526147_AddedCartAndCartItemModels.Designer.cs">
+      <DependentUpon>202103111526147_AddedCartAndCartItemModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103120825121_AddedCustomerModel.cs" />
+    <Compile Include="Migrations\202103120825121_AddedCustomerModel.Designer.cs">
+      <DependentUpon>202103120825121_AddedCustomerModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103120943334_AddedOrderAndOrderItemModels.cs" />
+    <Compile Include="Migrations\202103120943334_AddedOrderAndOrderItemModels.Designer.cs">
+      <DependentUpon>202103120943334_AddedOrderAndOrderItemModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103120958080_UpdatedPriceToBeADecimalInsteadOfString.cs" />
+    <Compile Include="Migrations\202103120958080_UpdatedPriceToBeADecimalInsteadOfString.Designer.cs">
+      <DependentUpon>202103120958080_UpdatedPriceToBeADecimalInsteadOfString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103190723058_AddedMovieActorModel.cs" />
+    <Compile Include="Migrations\202103190723058_AddedMovieActorModel.Designer.cs">
+      <DependentUpon>202103190723058_AddedMovieActorModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104042015256_AddedMovieRatingModel.cs" />
+    <Compile Include="Migrations\202104042015256_AddedMovieRatingModel.Designer.cs">
+      <DependentUpon>202104042015256_AddedMovieRatingModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104042024572_DeletedImageFieldFromActorModel.cs" />
+    <Compile Include="Migrations\202104042024572_DeletedImageFieldFromActorModel.Designer.cs">
+      <DependentUpon>202104042024572_DeletedImageFieldFromActorModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104042030465_AddedImageFieldToActorModel.cs" />
+    <Compile Include="Migrations\202104042030465_AddedImageFieldToActorModel.Designer.cs">
+      <DependentUpon>202104042030465_AddedImageFieldToActorModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104051036059_AddedRatingFieldToMovieModel.cs" />
+    <Compile Include="Migrations\202104051036059_AddedRatingFieldToMovieModel.Designer.cs">
+      <DependentUpon>202104051036059_AddedRatingFieldToMovieModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104051206179_RemovedRatingFieldFromMovieModel.cs" />
+    <Compile Include="Migrations\202104051206179_RemovedRatingFieldFromMovieModel.Designer.cs">
+      <DependentUpon>202104051206179_RemovedRatingFieldFromMovieModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104051209477_AddedRatingFieldToMovieModel1.cs" />
+    <Compile Include="Migrations\202104051209477_AddedRatingFieldToMovieModel1.Designer.cs">
+      <DependentUpon>202104051209477_AddedRatingFieldToMovieModel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104060955574_UpdatedRatingFiledsToIntType.cs" />
+    <Compile Include="Migrations\202104060955574_UpdatedRatingFiledsToIntType.Designer.cs">
+      <DependentUpon>202104060955574_UpdatedRatingFiledsToIntType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104131955361_AddedMovieUserModel.cs" />
+    <Compile Include="Migrations\202104131955361_AddedMovieUserModel.Designer.cs">
+      <DependentUpon>202104131955361_AddedMovieUserModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104132012057_AddedMovieUserModel1.cs" />
+    <Compile Include="Migrations\202104132012057_AddedMovieUserModel1.Designer.cs">
+      <DependentUpon>202104132012057_AddedMovieUserModel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104132146397_DeletedMovieUserModel.cs" />
+    <Compile Include="Migrations\202104132146397_DeletedMovieUserModel.Designer.cs">
+      <DependentUpon>202104132146397_DeletedMovieUserModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105161342042_addedTransactionModel.cs" />
+    <Compile Include="Migrations\202105161342042_addedTransactionModel.Designer.cs">
+      <DependentUpon>202105161342042_addedTransactionModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105162010415_DeletedTransactionModel.cs" />
+    <Compile Include="Migrations\202105162010415_DeletedTransactionModel.Designer.cs">
+      <DependentUpon>202105162010415_DeletedTransactionModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105252009314_RemovedSomeFieldsFromActorModel.cs" />
+    <Compile Include="Migrations\202105252009314_RemovedSomeFieldsFromActorModel.Designer.cs">
+      <DependentUpon>202105252009314_RemovedSomeFieldsFromActorModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cinemy.Core\Cinemy.Core.csproj">
+      <Project>{B8A88E4D-0438-4B76-9FED-E0636A61A177}</Project>
+      <Name>Cinemy.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202103091004590_Initial.resx">
+      <DependentUpon>202103091004590_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103091415323_DeletedMovieActorViewModel.resx">
+      <DependentUpon>202103091415323_DeletedMovieActorViewModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103091447341_AddedGenreModel.resx">
+      <DependentUpon>202103091447341_AddedGenreModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103091628329_RemovedActorsFieldInMovieModel.resx">
+      <DependentUpon>202103091628329_RemovedActorsFieldInMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103091648322_UpdatedMovieGenreIdToBeAStringInsteadOfGenre.resx">
+      <DependentUpon>202103091648322_UpdatedMovieGenreIdToBeAStringInsteadOfGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103111526147_AddedCartAndCartItemModels.resx">
+      <DependentUpon>202103111526147_AddedCartAndCartItemModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103120825121_AddedCustomerModel.resx">
+      <DependentUpon>202103120825121_AddedCustomerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103120943334_AddedOrderAndOrderItemModels.resx">
+      <DependentUpon>202103120943334_AddedOrderAndOrderItemModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103120958080_UpdatedPriceToBeADecimalInsteadOfString.resx">
+      <DependentUpon>202103120958080_UpdatedPriceToBeADecimalInsteadOfString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103190723058_AddedMovieActorModel.resx">
+      <DependentUpon>202103190723058_AddedMovieActorModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104042015256_AddedMovieRatingModel.resx">
+      <DependentUpon>202104042015256_AddedMovieRatingModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104042024572_DeletedImageFieldFromActorModel.resx">
+      <DependentUpon>202104042024572_DeletedImageFieldFromActorModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104042030465_AddedImageFieldToActorModel.resx">
+      <DependentUpon>202104042030465_AddedImageFieldToActorModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104051036059_AddedRatingFieldToMovieModel.resx">
+      <DependentUpon>202104051036059_AddedRatingFieldToMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104051206179_RemovedRatingFieldFromMovieModel.resx">
+      <DependentUpon>202104051206179_RemovedRatingFieldFromMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104051209477_AddedRatingFieldToMovieModel1.resx">
+      <DependentUpon>202104051209477_AddedRatingFieldToMovieModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104060955574_UpdatedRatingFiledsToIntType.resx">
+      <DependentUpon>202104060955574_UpdatedRatingFiledsToIntType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104131955361_AddedMovieUserModel.resx">
+      <DependentUpon>202104131955361_AddedMovieUserModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104132012057_AddedMovieUserModel1.resx">
+      <DependentUpon>202104132012057_AddedMovieUserModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104132146397_DeletedMovieUserModel.resx">
+      <DependentUpon>202104132146397_DeletedMovieUserModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105161342042_addedTransactionModel.resx">
+      <DependentUpon>202105161342042_addedTransactionModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105162010415_DeletedTransactionModel.resx">
+      <DependentUpon>202105162010415_DeletedTransactionModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105252009314_RemovedSomeFieldsFromActorModel.resx">
+      <DependentUpon>202105252009314_RemovedSomeFieldsFromActorModel.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,42 @@
+﻿#movie {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+    color: white;
+}
+
+#movie td, #movie th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#movie tr:nth-child(odd) {
+    background-color: #F15E5E;
+}
+
+#movie tr:nth-child(even) {
+    background-color: #F77575;
+}
+
+.center {
+    text-align: center;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+.center2 {
+    margin: auto;
+    width: 50%;
+}

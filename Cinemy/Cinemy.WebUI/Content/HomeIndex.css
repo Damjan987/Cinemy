@@ -1,0 +1,48 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 20%;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.star-wrapper {
+    direction: rtl;
+    left: 50%;
+}
+
+.star-wrapper button {
+    transition: all 0.5s;
+}
+
+.star-wrapper button:hover {
+    background-color: gold;
+    transform: scale(1.3);
+}
+
+.s1:hover ~ button {
+    background-color: gold;
+}
+
+.s2:hover ~ button {
+    background-color: gold;
+}
+
+.s3:hover ~ button {
+    background-color: gold;
+}
+
+.s4:hover ~ button {
+    background-color: gold;
+}
+
+.s5:hover ~ button {
+    background-color: gold;
+}

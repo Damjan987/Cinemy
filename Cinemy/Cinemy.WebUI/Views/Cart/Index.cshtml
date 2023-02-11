@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Cinemy.Core.ViewModels.CartItemViewModel>
+
+@{
+    ViewBag.Title = "Cart";
+}
+@using System.Configuration
+
+<div class="container body-content">
+    <h2>Cart</h2>
+
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                Line Total
+            </th>
+            <th></th>
+        </tr>
+
+        <form method="post" action="@ConfigurationManager.AppSettings["PayPalSubmitUrl"]">
+            @{int i = 1;}
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td><img class="img" style="height:70px" src="~/Content/MovieImages/@item.Image" /></td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MovieName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @String.Format("{0}$", item.Price)
+                    </td>
+                    <td>
+                        @String.Format("{0}$", item.Price * item.Quantity)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("RemoveFromCart", "Cart", new { Id = item.Id })" class="btn btn-danger">Remove from Cart</a>
+                    </td>
+                </tr>
+
+                <input type="hidden" name="upload" value="1" />
+                <input type="hidden" name="return" value="@ConfigurationManager.AppSettings["returnurl"]" />
+                <input type="hidden" name="cmd" value="_cart" />
+                <input type="hidden" name="business" value="@ConfigurationManager.AppSettings["PayPalUsername"]" />
+
+                <input type="hidden" name="item_name_@i" value="@item.MovieName" />
+                <input type="hidden" name="item_number_@i" value="p@i" />
+                <input type="hidden" name="amount_@i" value="@Math.Round(item.Price)" />
+                <input type="hidden" name="quantity_@i" value="@item.Quantity" />
+
+                i = i + 1;
+            }
+            <tr>
+                <td colspan="4" style="text-align: right"><strong>Cart Total</strong></td>
+                <td>
+                    @String.Format("{0}$", (from m in Model
+                                                  select m.Price
+                                         * m.Quantity).Sum())
+                </td>
+                <td><input type="image" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" /></td>
+            </tr>
+        </form>
+    </table>
+</div>

@@ -1,0 +1,45 @@
+﻿@model Cinemy.Core.ViewModels.MovieActorDetailViewModel
+
+@{
+    ViewBag.Title = Model.Movie.Name + "details";
+}
+
+@Styles.Render("~/Content/DetailsPage.css")
+
+<br />
+<br />
+<div class="card; center2" style="width: 70%; height: 70%">
+    <img src="~/Content/MovieImages/@Model.Movie.Image" alt="Avatar" style="width: 100%; height: 70%">
+    <table id="movie" style="width: 100%">
+        <tr>
+            <th class="center">@Html.DisplayNameFor(model => model.Movie.Name)</th>
+            <th>@Html.DisplayFor(model => model.Movie.Name)</th>
+        </tr>
+        <tr>
+            <td class="center">@Html.DisplayNameFor(model => model.Movie.GenreId)</td>
+            <td>@Html.DisplayFor(model => model.Movie.GenreId)</td>
+        </tr>
+        <tr>
+            <td class="center">@Html.DisplayNameFor(model => model.Movie.Description)</td>
+            <td>@Html.DisplayFor(model => model.Movie.Description)</td>
+        </tr>
+        <tr>
+            <td class="center">@Html.DisplayNameFor(model => model.Movie.Price)</td>
+            <td>@Html.DisplayFor(model => model.Movie.Price)</td>
+        </tr>
+        <tr>
+            <td class="center">Actors</td>
+            <td>
+                @foreach (var item in Model.Actors)
+                {
+                    <p>@item.Firstname</p>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a href="@Url.Action("AddToCart", "Cart", new { Id=Model.Movie.Id })" class="btn btn-danger" style="width: 100%">Add to cart</a>
+            </td>
+        </tr>
+    </table>
+</div>

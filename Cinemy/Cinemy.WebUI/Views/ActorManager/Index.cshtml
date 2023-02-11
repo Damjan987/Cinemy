@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Cinemy.Core.Models.Actor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container body-content">
+    <h2>Actors</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Firstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lastname)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Firstname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lastname)
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", "ActorManager", new { Id=item.Id })" class="btn btn-danger">Edit</a>
+                    <a href="@Url.Action("Delete", "ActorManager", new { Id=item.Id })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

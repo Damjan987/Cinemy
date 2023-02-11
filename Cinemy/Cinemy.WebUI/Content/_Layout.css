@@ -1,0 +1,18 @@
+﻿.elementImage {
+    height: 250px;
+    width: 100%;
+}
+
+@@media screen and (min-width: 1301px) {
+    .elementImage {
+        height: 250px;
+        width: 100%;
+    }
+}
+
+@@media screen and (max-width: 1000px) {
+    .elementImage {
+        height: 500px;
+        width: 100%;
+    }
+}

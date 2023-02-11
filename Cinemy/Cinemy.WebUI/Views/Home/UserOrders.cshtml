@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "UserOrders";
+}
+
+<div class="container body-content">
+    <br />
+    <h2>My Orders</h2>
+
+    <div class="col-md-6">
+        <br />
+        <br />
+        <div class="list-group">
+            @Html.ActionLink("Active Orders", "ActiveOrders", "Home", null, new { @class = "list-group-item" })
+        </div>
+    </div>
+    <div class="col-md-6">
+        <br />
+        <br />
+        <div class="list-group">
+            @Html.ActionLink("Past Orders", "PastOrders", "Home", null, new { @class = "list-group-item" })
+        </div>
+    </div>
+</div>

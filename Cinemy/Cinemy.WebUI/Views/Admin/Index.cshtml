@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Admin";
+}
+
+<div class="container body-content">
+    <h2>Admin Pages</h2>
+
+    <div class="col-md-6">
+        <h4>Movie Management</h4>
+        <div class="list-group">
+            @Html.ActionLink("Genres", "Index", "GenreManager", null, new { @class = "list-group-item" })
+            @Html.ActionLink("Movies", "Index", "MovieManager", null, new { @class = "list-group-item" })
+            @Html.ActionLink("Actors", "Index", "ActorManager", null, new { @class = "list-group-item" })
+            @Html.ActionLink("Movies & Actors", "Index", "MovieActor", null, new { @class = "list-group-item" })
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h4>Order Management</h4>
+        <div class="list-group">
+            @Html.ActionLink("Orders", "Index", "OrderManager", null, new { @class = "list-group-item" })
+        </div>
+    </div>
+</div>

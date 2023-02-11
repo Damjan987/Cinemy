@@ -1,0 +1,8 @@
+﻿@model Cinemy.Core.ViewModels.CartSummaryViewModel
+
+<div class="container body-content">
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="@Url.Action("Index", "Cart")">@Model.CartCount items</a></li>
+        <li><a href="@Url.Action("Index", "Cart")">@String.Format("{0}$", Model.CartTotal) </a></li>
+    </ul>
+</div>
